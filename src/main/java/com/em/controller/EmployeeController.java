@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.em.dto.EmployeeDto;
@@ -40,11 +41,8 @@ public class EmployeeController {
 
 	Logger logger = Logger.getLogger(EmployeeController.class);
 
-	@GetMapping("/")
-	public String index(Model model) {
-		model.addAttribute("index", "Model test is working");
-		return "login";
-	}
+	
+	
 	
 
 	@GetMapping("/index")
@@ -121,14 +119,7 @@ public class EmployeeController {
 	}
 	
 	
-	//logout not working
 	
-	@GetMapping("/logout")
-	public String logout(Model model, HttpSession session) {
-	
-		session.removeAttribute("empDto");
-		return "login"; 
-	}
 	
 	
 	
@@ -145,32 +136,7 @@ public class EmployeeController {
 		System.out.println("emp comtroller created");
 	}
 
-	@PostMapping(value = "/loginEmp")
-	// @RequestMapping(value = "/loginEmp", method = RequestMethod.POST)
-	public String login(@RequestParam String loginId, @RequestParam String password, Model model) {
-
-		EmployeeDto empFromDb = serviceImpl.getEmpByLoginId(loginId);
-
-		model.addAttribute("empDto", empFromDb);
-		// model.addAttribute("test", "testvalue");
-		
-		System.out.println(empFromDb);
-		if (password.equals(empFromDb.getPassword())) {
-			if (empFromDb.getRole().equals("admin")) {
-				model.addAttribute("welcome",
-						"welcome " + empFromDb.getFirstName() + "" + " " + empFromDb.getLastName());
-
-				return "adminpage";
-			}
-			if (empFromDb.getRole().equals("user")) {
-				model.addAttribute("welcome",
-						"welcome" + empFromDb.getFirstName() + "" + " " + empFromDb.getLastName());
-				return "userpage";
-			}
-		}
-		return "login";
-	}
-
+	
 	// @GetMapping("/userProfile")
 	@RequestMapping(value = "/userProfile", method = RequestMethod.GET)
 	public String userprofile(Model model, HttpSession session) {

@@ -93,10 +93,7 @@
 				</div>
 
 
-				<div class="form-group">
-					<label for="username"> DOB</label> <input class="form-control"
-						name="dob" type="text" value="${emp.dob}"">
-				</div>
+				
 				<div class="form-group">
 					<label for="username"> User Id</label> <input class="form-control"
 						name="loginId" type="text" value="${emp.loginId}">

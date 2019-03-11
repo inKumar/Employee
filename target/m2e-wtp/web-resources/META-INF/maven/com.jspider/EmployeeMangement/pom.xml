@@ -15,7 +15,6 @@
 	</properties>
 
 	<dependencies>
-
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -107,10 +106,36 @@
 			<artifactId>asm</artifactId>
 			<version>3.3.1</version>
 		</dependency>
-
-
+		
+		 <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-servlet</artifactId>
+      <version>9.4.7.v20170914</version>
+		</dependency>
+		
+		
+	
+		
+	
+		
 	</dependencies>
+	
 	<build>
+	<plugins>
+      <plugin>
+        <groupId>com.heroku.sdk</groupId>
+        <artifactId>heroku-maven-plugin</artifactId>
+        <version>2.0.7</version>
+        <configuration>
+        <appName>desolate-hamlet-88787</appName>
+          <buildpacks>
+            <buildpack>heroku/exec</buildpack>
+            <buildpack>heroku/metrics</buildpack>
+            <buildpack>heroku/jvm</buildpack>
+          </buildpacks>
+        </configuration>
+      </plugin>
+</plugins>
 		<finalName>EmployeeMangement</finalName>
 	</build>
 </project>

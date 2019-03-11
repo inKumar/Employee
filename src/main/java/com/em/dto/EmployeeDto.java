@@ -37,11 +37,11 @@ public class EmployeeDto {
 	@Column(name = "last_name", nullable = false, length = 20)
 	private String lastName;
 
-	@Column(name = "date_of_birth")
-	private Date dob;
+//	@Column(name = "date_of_birth")
+//	private Date dob;
 
-	@Column(name = "date_of_joining")
-	private Date dateOfJoing;
+//	@Column(name = "date_of_joining")
+//	private Date dateOfJoing;
 
 	@Column(name = "is_active")
 	private boolean isActive;
@@ -101,21 +101,21 @@ public class EmployeeDto {
 		this.lastName = lastName;
 	}
 
-	public Date getDob() {
-		return dob;
-	}
-
-	public void setDob(Date dob) {
-		this.dob = dob;
-	}
-
-	public Date getDateOfJoing() {
-		return dateOfJoing;
-	}
-
-	public void setDateOfJoing(Date dateOfJoing) {
-		this.dateOfJoing = dateOfJoing;
-	}
+//	public Date getDob() {
+//		return dob;
+//	}
+//
+//	public void setDob(Date dob) {
+//		this.dob = dob;
+//	}
+//
+//	public Date getDateOfJoing() {
+//		return dateOfJoing;
+//	}
+//
+//	public void setDateOfJoing(Date dateOfJoing) {
+//		this.dateOfJoing = dateOfJoing;
+//	}
 
 	public boolean getIsActive() {
 		return isActive;
@@ -125,21 +125,21 @@ public class EmployeeDto {
 		this.isActive = isActive;
 	}
 
-	@Override
-	public String toString() {
-		return "EmployeeDto [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", dob=" + dob
-				+ ", dateOfJoing=" + dateOfJoing + ", isActive=" + isActive + ", loginId=" + loginId + ", password="
-				+ password + ", role=" + role + ", addressDto=" + addressDto + ", department=" + department
-				+ ", company=" + company + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "EmployeeDto [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", dob=" + dob
+//				+ ", dateOfJoing=" + dateOfJoing + ", isActive=" + isActive + ", loginId=" + loginId + ", password="
+//				+ password + ", role=" + role + ", addressDto=" + addressDto + ", department=" + department
+//				+ ", company=" + company + "]";
+//	}
 
 	public EmployeeDto(Long id, String firstName, String lastName, Date dob, Date dateOfJoing, boolean isActive) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.dob = dob;
-		this.dateOfJoing = dateOfJoing;
+//		this.dob = dob;
+//		this.dateOfJoing = dateOfJoing;
 		this.isActive = isActive;
 	}
 
@@ -148,8 +148,8 @@ public class EmployeeDto {
 
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.dob = dob;
-		this.dateOfJoing = dateOfJoing;
+//		this.dob = dob;
+//		this.dateOfJoing = dateOfJoing;
 		this.isActive = isActive;
 	}
 

@@ -30,4 +30,5 @@
 			value="/WEB-INF/hibernate.cfg.xml"></property>
 	</bean>
 
+
 </beans>
